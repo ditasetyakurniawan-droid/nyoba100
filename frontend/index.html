@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>K8s Study Case</title>
+</head>
+<body>
+    <h1>Frontend OK!</h1>
+    <p id="api"></p>
+    <script>
+        fetch("/api/hello")
+          .then(res => res.json())
+          .then(data => {
+              document.getElementById("api").innerText = data.message || data.error;
+          })
+          .catch(err => console.error(err));
+    </script>
+</body>
+</html>
